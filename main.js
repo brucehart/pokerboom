@@ -102,8 +102,8 @@ const game = {
   levelIndex: null,
   levelConfig: null,
   mode: "level",
-  rows: 5,
-  cols: 10,
+  rows: 10,
+  cols: 5,
   score: 0,
   combo: 1,
   movesLeft: 0,
@@ -127,8 +127,8 @@ const bombSlots = {
 const LEVELS = buildLevels();
 const ENDLESS_LEVEL = {
   name: "Endless",
-  rows: 5,
-  cols: 10,
+  rows: 10,
+  cols: 5,
   maxMoves: Infinity,
   targetScore: Infinity,
   bombs: {
@@ -162,8 +162,8 @@ function buildLevels() {
 
     levels.push({
       name: `Level ${tier}`,
-      rows: 5,
-      cols: 10,
+      rows: 10,
+      cols: 5,
       maxMoves,
       targetScore,
       bombs: {

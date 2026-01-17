@@ -8,7 +8,7 @@ Level mode: Reach the target score within the move limit.
 Endless mode: Keep scoring as long as you can.
 
 Board
-- Size: 5 rows x 10 columns.
+- Size: 10 rows x 5 columns.
 - Coordinates: row 0 at the top, column 0 at the left.
 - Cards have rank 2-14 (J=11, Q=12, K=13, A=14) and suit (Clubs, Diamonds, Hearts, Spades).
 

@@ -8,7 +8,7 @@ Status
 - Mobile-first layout with drag or tap input.
 
 Features
-- 5x10 card grid with gravity and refill
+- 10x5 card grid with gravity and refill
 - 5-card adjacency selection (4-direction)
 - Poker hand evaluation with A-low straight support
 - Scoring, combo multiplier, and clutch bonus
