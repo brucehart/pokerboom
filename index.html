@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Poker Boom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-title">Poker Boom</div>
+          <div class="brand-sub">Five-card poker puzzler</div>
+        </div>
+        <div class="hud">
+          <div class="hud-item">
+            <span class="label">Score</span>
+            <span id="hud-score" class="value">0</span>
+          </div>
+          <div class="hud-item">
+            <span class="label">Moves</span>
+            <span id="hud-moves" class="value">0</span>
+          </div>
+          <div class="hud-item">
+            <span class="label">Combo</span>
+            <span id="hud-combo" class="value">1</span>
+          </div>
+          <div class="hud-item">
+            <span class="label">Target</span>
+            <span id="hud-target" class="value">--</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="stage">
+        <section class="board-shell">
+          <div class="bomb-row top" id="bombs-top"></div>
+          <div class="board-row">
+            <div class="bomb-col left" id="bombs-left"></div>
+            <div class="board" id="board" aria-label="Game board"></div>
+            <div class="bomb-col right" id="bombs-right"></div>
+          </div>
+          <div class="bomb-row bottom" id="bombs-bottom"></div>
+        </section>
+
+        <aside class="panel">
+          <div class="panel-card">
+            <div class="panel-label">Hand</div>
+            <div id="hand-name" class="hand-name">Select 5 cards</div>
+            <div id="hand-cards" class="hand-cards"></div>
+          </div>
+          <div class="panel-card">
+            <div class="panel-label">Hand Scores</div>
+            <div id="score-list" class="score-list"></div>
+          </div>
+          <div class="panel-card">
+            <div class="panel-label">Level</div>
+            <div id="level-name" class="level-name">--</div>
+            <div id="level-meta" class="level-meta">Target -- - Moves --</div>
+          </div>
+          <div id="status" class="status">Drag across 5 adjacent cards.</div>
+          <div class="panel-actions">
+            <button id="btn-clear" class="btn ghost" type="button">Clear</button>
+            <button id="btn-restart" class="btn" type="button">Restart</button>
+            <button id="btn-menu" class="btn ghost" type="button">Levels</button>
+          </div>
+        </aside>
+      </main>
+
+      <section id="menu" class="overlay menu">
+        <div class="overlay-card">
+          <div class="overlay-title">Choose a level</div>
+          <div id="level-list" class="level-list"></div>
+          <div class="overlay-actions">
+            <button id="btn-close-menu" class="btn ghost" type="button">Close</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="level-end" class="overlay end">
+        <div class="overlay-card">
+          <div id="end-title" class="overlay-title">Level Complete</div>
+          <div id="end-body" class="overlay-body"></div>
+          <div class="overlay-actions">
+            <button id="btn-next" class="btn" type="button">Next Level</button>
+            <button id="btn-retry" class="btn ghost" type="button">Retry</button>
+            <button id="btn-end-menu" class="btn ghost" type="button">Menu</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
