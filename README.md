@@ -1,4 +1,4 @@
-Poker Boom (Web)
+## Poker Boom
 
 Poker Boom is a web-based puzzle game inspired by match games. You select exactly five adjacent cards to form a poker hand. Scoring hands clear the cards, the board collapses, and new cards fall in. Bombs on the perimeter add pressure by ticking down each move and triggering penalties when they explode.
 
@@ -61,6 +61,3 @@ Suggested Next Steps
 - Add RNG shaping and daily seed challenges
 - Add tutorial and accessibility options
 - Add unit tests for hand evaluation
-
-License
-Not specified.
