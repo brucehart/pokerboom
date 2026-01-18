@@ -79,7 +79,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.9;
 }
 
 .backdrop-card .suit {
@@ -100,57 +99,6 @@ body {
   z-index: 0;
 }
 
-.backdrop-card .face-top,
-.backdrop-card .face-bottom {
-  font-size: clamp(32px, 6vw, 52px);
-  z-index: 1;
-  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
-  padding: 6px 10px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 2px solid #1b1b1b;
-  width: fit-content;
-}
-
-.backdrop-card .face-center {
-  font-size: clamp(38px, 8vw, 74px);
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
-  padding: 8px 16px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 3px solid #1b1b1b;
-  width: fit-content;
-  justify-self: center;
-}
-
-.backdrop-card.king {
-  top: 12%;
-  left: 0%;
-  transform: rotate(-10deg);
-  background-image: url("assets/king-hearts.jpg");
-}
-
-.backdrop-card.queen {
-  bottom: 2%;
-  right: 0%;
-  transform: rotate(8deg);
-  background-image: url("assets/queen-spades.jpg");
-}
-
-.backdrop-card.queen .suit {
-  color: #1b1b1b;
-}
-
-.backdrop-card.jack {
-  top: 38%;
-  right: 42%;
-  transform: rotate(-4deg);
-  background-image: url("assets/jack-diamonds.jpg");
-}
 
 .topbar {
   position: relative;
@@ -579,6 +527,11 @@ body {
   color: #1b1b1b;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn.solid {
+  background: #00d4ff;
+  color: #1b1b1b;
 }
 
 .btn.ghost {

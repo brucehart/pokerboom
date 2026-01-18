@@ -71,6 +71,7 @@ const dom = {
   endTitle: document.getElementById("end-title"),
   endBody: document.getElementById("end-body"),
   scoreList: document.getElementById("score-list"),
+  backdrop: document.getElementById("backdrop"),
   btnClear: document.getElementById("btn-clear"),
   btnRestart: document.getElementById("btn-restart"),
   btnMenu: document.getElementById("btn-menu"),
@@ -1096,6 +1097,34 @@ function describeDefuseEffect(type) {
   return parts.join(" + ");
 }
 
+function buildBackdropCards() {
+  if (!dom.backdrop) return;
+  dom.backdrop.innerHTML = "";
+
+  const images = [
+    "assets/king-hearts.jpg",
+    "assets/queen-spades.jpg",
+    "assets/jack-diamonds.jpg",
+  ];
+
+  const total = window.innerWidth >= 900 ? 18 : 10;
+
+  for (let i = 0; i < total; i += 1) {
+    const card = document.createElement("div");
+    card.className = "backdrop-card";
+    const left = Math.random() * 100;
+    const top = Math.random() * 100;
+    const rotation = Math.random() * 40 - 20;
+    const scale = 0.5 + Math.random() * 0.6;
+    const image = images[i % images.length];
+    card.style.left = `${left}%`;
+    card.style.top = `${top}%`;
+    card.style.transform = `translate(-50%, -50%) rotate(${rotation}deg) scale(${scale})`;
+    card.style.backgroundImage = `url(\"${image}\")`;
+    dom.backdrop.appendChild(card);
+  }
+}
+
 function bindEvents() {
   dom.board.addEventListener("pointerdown", handlePointerDown);
   dom.board.addEventListener("pointerover", handlePointerOver);
@@ -1146,6 +1175,12 @@ function init() {
   game.board = createBoard(game.rows, game.cols, createRng(1));
   renderBoard();
   bindEvents();
+  buildBackdropCards();
+  let backdropTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(backdropTimer);
+    backdropTimer = setTimeout(buildBackdropCards, 200);
+  });
   openMenu();
   updateStatus("Choose a level to begin.");
 }
